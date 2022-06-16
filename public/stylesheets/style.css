@@ -1,8 +1,22 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ECE5C7;
 }
 
 a {
   color: #00B7FF;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-container {
+      margin: 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }

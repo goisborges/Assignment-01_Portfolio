@@ -10,13 +10,23 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    {{!--add the javascript script from folder--}}
+    {{!add the javascript script from folder}}
     <script src="/javascripts/script.js"></script>
+
+    {{!add fontawesome icons}}
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
   </head>
   <body>
     {{!navbar}}
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #C2DED1">
-      <a class="navbar-brand" href="#">My Portfolio</a>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-light"
+      style="background-color: #fff"
+    >
+      <a class="navbar-brand" href="#">Marcos Borges</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -28,7 +38,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div
+        class="collapse navbar-collapse"
+        style="justify-content: flex-end"
+        id="navbarNavAltMarkup"
+      >
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/">Home
             <span class="sr-only">(current)</span></a>
@@ -41,6 +55,20 @@
 
     {{!Any content added here is applied to all pages }}
     {{{body}}}
+
+    {{!footer}}
+    <footer class="footer">
+      <div class="footer-container">
+        <span class="text-muted">&copy; 2020 Marcos Borges</span>
+      </div>
+      <div class="icon_container">
+        <a href="https://www.linkedin.com/in/marcosdegoisborges//">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/goisborges">
+          <i class="fab fa-github"></i>
+        </a>
+    </footer>
 
     {{!adding bootstrap javascript}}
     <script
