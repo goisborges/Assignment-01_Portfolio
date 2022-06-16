@@ -11,6 +11,7 @@ a {
 .footer {
   display: flex;
   justify-content: space-between;
+      padding: 1% 2%;
 }
 
 .contact-container {
@@ -20,6 +21,8 @@ a {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background: #354259;
+          color: #ECE5C7;
 }
 .text-container {
       display: flex;
@@ -71,4 +74,13 @@ a {
 }
 .languages p {
   width: 300px;
+}
+.fab {
+  margin: 5px;
+  color: #354259;
+}
+.button-form{
+      background-color: #ECE5C7!important;
+        color: #354259!important;
+        float: right;
 }
