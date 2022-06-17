@@ -35,14 +35,21 @@ app.post('/contact', function(req, res, next) {
   console.log("This is a POST request for email")
   console.log(req.body);
 
+  //donenv set up to read the nodemailer login information from the .env file
+const dotenv = require('dotenv');
+dotenv.config();
+
+//nodemailer configuration
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'marcosdegoisborges@gmail.com',
-      pass: 'jykdbgmjcksekprt'
+      user: `${process.env.NMUSER}`,
+      pass: `${process.env.NMPASS}`
 
     } 
   })
+
+  //nodemailer will send me an email with the form information
   const mailOptions = {
     from: req.body.email,
     to: 'marcosdegoisborges@gmail.com',
