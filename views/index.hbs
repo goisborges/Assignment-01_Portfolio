@@ -5,3 +5,13 @@
     <h2>Marcos Borges</h2>
  </div>
 </div>
+
+<script>
+  window.onload = function() {
+    if (document.getElementsByClassName('.active')){
+      document.getElementsByClassName('.active').classList.remove('active');
+    }
+    document.getElementById('.home-menu').classList.add('active');
+    alert("loaded")
+  }
+</script>
