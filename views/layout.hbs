@@ -51,9 +51,9 @@
       >
         <div class="navbar-nav">
           <a class="nav-item nav-link home-menu" id="home-menu" href="/">Home           
-          <a class="nav-item nav-link projects-menu" href="/projects">Projects</a>
-          <a class="nav-item nav-link about-menu" href="/about">About</a>
-          <a class="nav-item nav-link contact-menu" href="/contact">Contact</a>
+          <a class="nav-item nav-link projects-menu" id="projects-menu" href="/projects">Projects</a>
+          <a class="nav-item nav-link about-menu" id="about-menu" href="/about">About</a>
+          <a class="nav-item nav-link contact-menu" id="contact-menu" href="/contact">Contact</a>
         </div>
       </div>
     </nav>
@@ -81,5 +81,23 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <!--add logic that will add an active class to the current menu link-->
+    <!-- I am not sure if this is the best methos but it works -->
+    <script>
+      var currentUrl = window.location.pathname;
+      var currentPage = currentUrl.substring(1, currentUrl.length);
+      console.log("The current page is :" + currentPage);
+      if (currentPage == "") {
+        document.getElementById("home-menu").classList.add("active");
+      } else if (currentPage == "projects") {
+        document.getElementById("projects-menu").classList.add("active");
+      } else if (currentPage == "about") {
+        document.getElementById("about-menu").classList.add("active");
+      } else if (currentPage == "contact") {
+        document.getElementById("contact-menu").classList.add("active");
+      }
+    </script>
+
   </body>
 </html>
