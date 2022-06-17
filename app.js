@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const nodemailer = require('nodemailer');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +22,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//For Nodemailer and send e-mail from form (contact page)
+app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -28,13 +31,45 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/projects', projectsRouter);
 
+app.post('/contact', function(req, res, next) {
+  console.log("This is a POST request for email")
+  console.log(req.body);
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'marcosdegoisborges@gmail.com',
+      pass: 'M%40rcos22720661'
+
+    } 
+  })
+  const mailOptions = {
+    from: req.body.email,
+    to: 'marcosdegoisborges@gmail.com',
+    subject: 'Contact from portfolio',
+    text: req.body.message
+  }
+  transporter.sendMail(mailOptions, function(err, data) {
+    if (err) {
+      console.log('Error Occurs');
+      console.log(err);
+    } else {
+      console.log('Email sent');
+      console.log(data);
+    }
+  }
+  )
+  res.redirect('/');
+}
+)
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -43,5 +78,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

@@ -63,6 +63,9 @@ a {
         padding-top: 1%;
         margin-bottom: 2%;
 }
+.languages-title h2 {
+  font-size: 1.5rem;
+}
 .languages {
       display: flex;
         justify-content: space-between;
@@ -83,4 +86,23 @@ a {
       background-color: #ECE5C7!important;
         color: #354259!important;
         float: right;
+}
+.index-container {
+  background-image: url(../images/3d_background.png);
+    height: 90vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.front-text {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
+  padding-left: 10%;
+}
+.hey {
+  font-size: 10rem;
+}
+.portfolio-text {
+  font-size: 3rem;
 }
