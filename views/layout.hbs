@@ -88,15 +88,22 @@
       var currentUrl = window.location.pathname;
       var currentPage = currentUrl.substring(1, currentUrl.length);
       console.log("The current page is :" + currentPage);
-      if (currentPage == "") {
-        document.getElementById("home-menu").classList.add("active");
-      } else if (currentPage == "projects") {
-        document.getElementById("projects-menu").classList.add("active");
-      } else if (currentPage == "about") {
-        document.getElementById("about-menu").classList.add("active");
-      } else if (currentPage == "contact") {
-        document.getElementById("contact-menu").classList.add("active");
+      switch (currentPage) {
+        case "":
+          document.getElementById("home-menu").classList.add("active");
+          break;
+        case "projects":
+          document.getElementById("projects-menu").classList.add("active");
+          break;
+        case "about":
+          document.getElementById("about-menu").classList.add("active");
+          break;
+        case "contact":
+          document.getElementById("contact-menu").classList.add("active");
+          break;
       }
+
+     
     </script>
 
   </body>
