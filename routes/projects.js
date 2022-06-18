@@ -6,7 +6,7 @@ var router = express.Router();
 //intention is to register this object to '/about' route
 router.get('/', function(req, res, next) {
   // tell express to render an hbs view template
-  res.render('project', { title: 'Projects' });
+  res.render('project', { title: 'Some of my Projects' });
 })
 
 module.exports = router;

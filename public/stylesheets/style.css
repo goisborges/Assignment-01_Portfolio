@@ -19,7 +19,7 @@ a {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        
         align-items: center;
         background: #354259;
         color: #ECE5C7;
@@ -106,4 +106,33 @@ a {
 }
 .portfolio-text {
   font-size: 3rem;
+}
+
+/* Projects View */
+.card{
+  width: 400px;
+  padding: 1%;
+  margin: 5px;
+  height: 480px;
+}
+.projects_container{
+  padding: 10px;
+  background-color: #354259;
+  height: auto;
+  width: 100%;
+}
+.cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+}
+.projects_header h1{
+      margin-top: 20px;
+        padding-left: 20px;
+        color: white;
+        font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
 }
