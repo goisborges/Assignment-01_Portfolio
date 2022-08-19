@@ -31,6 +31,9 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/projects', projectsRouter);
 
+// use public folder
+app.use(express.static('public'))
+
 app.post('/contact', function(req, res, next) {
   console.log("This is a POST request for email")
   console.log(req.body);
