@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var projectsRouter = require('./routes/projects');
+var resumeRouter = require('./routes/resume');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/projects', projectsRouter);
+app.use("/resume", resumeRouter);
 
 // use public folder
 app.use(express.static('public'))
